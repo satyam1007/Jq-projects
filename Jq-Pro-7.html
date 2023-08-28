@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Shortcut Icon" href="/JS.COURSE.HTML/images/img-1.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="FlipClock-master/src/flipclock/css/flipclock.css">
+    <title>flipclock using jquery plugin</title>
+</head>
+
+<body>
+    <div class="clock" style="margin:2em;"></div>
+    <div class="message"></div>
+    <script src="FlipClock-master/compiled/flipclock.min.js"></script>
+    <script>
+        var clock = $('.clock').FlipClock({
+            clockFace: 'DailyCounter',
+            autoStart: false,
+            callbacks: {
+                stop: function () {
+                    $('.message').html('The clock has stopped!');
+                }
+            }
+        });
+        // set time
+        clock.setTime(86400); 
+
+        // countdown mode
+        clock.setCountdown(true);
+ 
+        // start the clock
+        clock.start();  
+    </script>
+</body>
+
+</html>

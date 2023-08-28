@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Shortcut Icon" href="/JS.COURSE.HTML/images/img-1.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <title>Spinner using Jquery UI</title>
+    <script>
+        $(function () {
+            var spinner = $("#spinner").spinner();
+
+            $("#disable").on("click", function () {
+                if (spinner.spinner("option", "disabled")) {
+                    spinner.spinner("enable");
+                } else {
+                    spinner.spinner("disable");
+                }
+            });
+            $("#destroy").on("click", function () {
+                if (spinner.spinner("instance")) {
+                    spinner.spinner("destroy");
+                } else {
+                    spinner.spinner();
+                }
+            });
+            $("#getvalue").on("click", function () {
+                alert(spinner.spinner("value"));
+            });
+            $("#setvalue").on("click", function () {
+                spinner.spinner("value", 51);
+            });
+
+            $("button").button();
+        });
+    </script>
+</head>
+
+<body>
+    <p>
+        <label for="spinner">Select a value:</label>
+        <input id="spinner" name="value">
+    </p>
+
+    <p>
+        <button id="disable">Toggle disable/enable</button>
+        <button id="destroy">Toggle widget</button>
+    </p>
+
+    <p>
+        <button id="getvalue">Get value</button>
+        <button id="setvalue">Set value to 51</button>
+    </p>
+</body>
+
+</html>

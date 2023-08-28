@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Shortcut Icon" href="/JS.COURSE.HTML/images/img-1.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="light_box/css/jquery.lbt-lightbox.min.css">
+    <title>Light Box using Jquery Plugin</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@500;600&family=Indie+Flower&family=Kalam&display=swap');
+
+        #gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .caption {
+            font-family: 'Edu SA Beginner', cursive;
+            text-align: center;
+            background-color: #000;
+            color: #fff;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 20px;
+            border-radius: 3px;
+        }
+
+        .item {
+            transition: all 0.3s;
+            opacity: 0.70;
+        }
+
+        .item:hover {
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        .item img {
+            border-radius: 3px;
+            cursor: pointer;
+            object-fit: cover;
+        }
+
+        .header {
+            font-family: 'Edu SA Beginner', cursive;
+            text-align: center;
+        }
+
+        .buttons button {
+            height: 50px;
+            width: 200px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            background-color: #4F46E5;
+            font-size: 20px;
+            font-family: 'Edu SA Beginner', cursive;
+        }
+
+        .buttons button a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .header p {
+            font-size: 20px;
+            padding-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>jQuery LBT-Lightbox Plugin Example</h1>
+        <div class="buttons">
+            <button><a href="https://JqueryScript.net" target="_blank">Download This Plugin</a></button>
+            <button><a href="#">Back To JqueryShot</a></button>
+        </div>
+        <p>A responsive and easy-to-use jQuery gallery lightbox plugin that provides a user-friendly way to showcase images and videos on your <br> website or web application.</p>
+    </div>
+    <div id="gallery">
+        <div class="item">
+            <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHRyYXZlbGxpbmd8ZW58MHx8MHx8fDA%3D&w=1000&q=80"
+                alt="image1" width="250px" height="300px" />
+            <div class="caption">
+                <p>Description 1</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://t4.ftcdn.net/jpg/03/08/69/75/360_F_308697506_9dsBYHXm9FwuW0qcEqimAEXUvzTwfzwe.jpg"
+                alt="image2" width="250px" height="300px" />
+            <div class="caption">
+                <p>Description 2</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://webneel.com/daily/sites/default/files/images/daily/08-2018/1-nature-photography-spring-season-mumtazshamsee.jpg"
+                alt="image3" width="250px" height="300px" />
+            <div class="caption">
+                <p>Description 3</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://starwalk.space/gallery/images/what-is-space/1920x1080.jpg" alt="image3" width="250px"
+                height="300px" />
+            <div class="caption">
+                <p>Description 3</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://img.freepik.com/premium-photo/2d-mountain-night-landscape-background-vector-blue-sky-flat-vector-generated-ai_889431-800.jpg"
+                alt="image3" width="250px" height="300px" />
+            <div class="caption">
+                <p>Description 3</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://preview.redd.it/jgfqh9nns0871.png?width=1920&format=png&auto=webp&s=6daddbd49c5f47746887c2a84fad0fe6043ff0d6"
+                alt="image3" width="250px" height="300px" />
+            <div class="caption">
+                <p>Description 3</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://img.freepik.com/premium-photo/illustration-neon-tropical-theme-with-palm-tree-exotic-floral-ai_564714-1270.jpg"
+                alt="image3" width="250px" height="300px" />
+            <div class="caption">
+                <p>Description 3</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://t4.ftcdn.net/jpg/05/35/33/39/360_F_535333922_tBGFT4qC3bLUrnKWWQhj8pXHS1cQIuFK.jpg"
+                alt="image3" width="250px" height="300px" />
+            <div class="caption">
+                <p>Description 3</p>
+            </div>
+        </div>
+    </div>
+    <script src="light_box/js/jquery.lbt-lightbox.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#gallery').lbtLightBox({
+
+                // the number of thumbnails in the pagination
+                qtd_pagination: 8,
+
+                // width/height of the thumbnail pagination
+                pagination_width: "60px",
+                pagination_height: "60px",
+
+            });
+        });
+    </script>
+</body>
+
+</html>

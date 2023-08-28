@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <title>Events</title>
+</head>
+
+<body>
+    <p id="para">This is para</p>
+    <button id="btn">Click</button>
+    <div id="colored-div"
+        style="background-color: #007bff; color: black; height: 100px; width: 100px; text-align: center; padding-top: 10px; border-radius: 3px; margin-top: 10px;">
+    </div>
+    <script>
+        // $(document).ready(function () {
+        //     $("#btn").click(function () {
+        //         // $("#para").hide();
+        //         $(this).hide();
+        //     });
+        // });
+
+
+        // $(document).ready(function () {
+        //     $("#colored-div").mouseenter(function () {
+        //         $("#para").hide();
+        //     });
+        // });
+
+        // $(document).ready(function () {
+        //     $("#colored-div").hover(function () {
+        //         $("#para").hide();
+        //     }, function () {
+        //         $("#para").show();
+        //     });
+        // });
+
+        $(document).ready(function () {
+            $("#colored-div").on({
+                click: function (){
+                    $(this).css("background-color", "red");
+                },
+                mouseenter: function () {
+                    $(this).css("background-color", "blue");
+                },
+
+                mouseleave: function () {
+                    $(this).css("background-color", "green");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

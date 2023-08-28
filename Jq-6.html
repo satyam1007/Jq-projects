@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <title>Manipulating HTML</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border-radius: 3px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .red {
+            background-color: #00ffbf;
+        }
+
+        .circle {
+            border-radius: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="para">This is para</p>
+    <button id="btn-1">Button-1</button>
+    <button id="btn-2">Button-2</button>
+    <div id="colored-div"
+        style="background-color: #007bff; color: black; height: 100px; width: 100px; text-align: center; padding-top: 10px; border-radius: 3px; margin-top: 10px;">
+        <p>Lorem ipsum dolor sit amet consectetur. <a href="https://www.google.com" id="link"></a> </p>
+    </div>
+    <input type="text" name="" id="inputText">
+
+    <!-- before -->
+    <ul id="ul-list">
+        <!-- prepand -->
+        <li>list-1</li>
+        <li>list-2</li>
+        <li>list-3</li>
+        <li>list-4</li>
+        <!-- append -->
+    </ul>
+    <!-- after -->
+
+    <div id="box" class="box red"></div>
+    <button id="btn">Click</button>
+    <script>
+        // $(document).ready(function () {
+        //     $("#btn-1").click(function () {
+        //         let txt = $("#colored-div").text();
+        //         alert(txt);
+        //     });
+        // });
+
+        // $(document).ready(function () {
+        //     $("#btn-1").click(function () {
+        //         $("#colored-div").html("<h1>Hello World!</h1>");
+        //         // alert(txt);
+        //     });
+        // });
+
+        // $(document).ready(function () {
+        //     $("#btn-1").click(function () {
+        //         let value = $("#inputText").val("Satyam Mishra is the best programer!!");
+        //         // alert(value);
+        //     });
+        // });
+
+        // $(document).ready(function () {
+        //     $("#btn-1").click(function () {
+        //         let val = $("#link").attr("href");
+        //         alert(val);
+        //     });
+        // });
+
+        // $(document).ready(function () {
+        //     // $("#ul-list").before("<li>start</li>");
+        //     // $("#ul-list").prepend("<li>list-0</li>");
+        //     // $("#ul-list").append("<li>list-5</li>");
+        //     // $("#ul-list").after("<li>end</li>");
+        //     // $("#ul-list").empty();
+        //     $("#ul-list").remove();
+        // });
+
+        $(document).ready(function () {
+            $("#btn").click(function () {
+            //    $("#box").addClass("circle");
+            //    $("#box").removeClass("circle");
+               $("#box").toggleClass("circle");
+            });
+        });
+    </script>
+</body>
+
+</html>

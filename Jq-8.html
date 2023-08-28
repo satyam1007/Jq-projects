@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <title>Traversing HTML</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 2px solid #000;
+            border-radius: 3px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .red {
+            background-color: #00ffbf;
+        }
+
+        .circle {
+            border-radius: 100px;
+        }
+
+        #btn {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul> <!-- (Grandfather)-->
+        <li> <!-- (Parent)-->
+            <span id="span1">list-1</span> <!-- Child-->
+        </li>
+        <li> <!-- (Parent)-->
+            <span id="span2">list-2</span>
+        </li>
+    </ul>
+    <script>
+        // let element = $("#span1").parent();
+        // element.css("border", "1px solid red");
+
+        let element = $("#span1").parents();
+        element.css("border", "1px solid red");
+    </script>
+</body>
+
+</html>
